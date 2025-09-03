@@ -1,0 +1,140 @@
+/* Container */
+.container {
+  max-width: 680px;
+  margin: 1.5rem auto;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+h2 {
+  margin: 0.25rem 0 1rem;
+  color: #1976d2;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+/* Task list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: #f7f9fc;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 10px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+li:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+li.done {
+  color: #777;
+  background: #eef1f5;
+  text-decoration: line-through;
+}
+
+/* Task info */
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.muted {
+  color: #555;
+}
+
+/* Importance badges */
+.badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge.high {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.badge.medium {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.badge.low {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* Buttons */
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+  background: #e3f2fd;
+  color: #1565c0;
+  transition: background 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: #bbdefb;
+}
+
+button:disabled {
+  background: #cfd8dc;
+  color: #546e7a;
+  cursor: not-allowed;
+}
+
+.progress-btn {
+  display: block;
+  margin: 1rem auto 0;
+  background: #1976d2;
+  color: #fff;
+}
+
+.progress-btn:hover {
+  background: #1565c0;
+}
+
+/* Progress bar */
+.progress-wrap {
+  margin-top: 0.75rem;
+}
+
+.progress-bar {
+  height: 10px;
+  background: #e0e7ef;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #1976d2;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 0.4rem;
+  color: #333;
+  font-size: 0.9rem;
+}

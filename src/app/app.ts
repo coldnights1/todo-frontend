@@ -1,12 +1,23 @@
-import { Component, signal } from '@angular/core';
+// src/app/app.ts
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './header/header';
+import { BodyComponent } from './body/body';
+import { NgClass } from '@angular/common';
+import { FooterComponent } from './footer/footer';
+interface Task {
+  task_name: string;
+  time_to_complete: string;
+  importance: string;
+}
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, BodyComponent,HeaderComponent,NgClass,FooterComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']   // ← plural!
 })
 export class App {
-  protected readonly title = signal('todo-app');
+  
 }

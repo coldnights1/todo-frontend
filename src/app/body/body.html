@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Task List</h2>
+
+  <ul>
+    @for (task of tasks; track task.task_name) {
+      <li [class.done]="task.completed">
+        <div class="info">
+          <b>{{ task.task_name }}</b>
+          <span class="muted">— {{ task.time_to_complete }}</span>
+          <span class="badge"
+                [ngClass]="{ high: task.importance==='High',
+                             medium: task.importance==='Medium',
+                             low: task.importance==='Low' }">
+            {{ task.importance }}
+          </span>
+        </div>
+
+        <button (click)="markCompleted(task)" [disabled]="task.completed">
+          {{ task.completed ? 'Completed' : 'Mark as Completed' }}
+        </button>
+      </li>
+    }
+  </ul>
+
+  <button class="progress-btn" (click)="trackProgress()">Track Progress</button>
+
+  @if (showProgress) {
+    <div class="progress-wrap">
+      <div class="progress-bar">
+        <div class="fill" [style.width.%]="percent"></div>
+      </div>
+      <p class="progress-text">{{ done }}/{{ total }} tasks ({{ percent }}%)</p>
+    </div>
+  }
+  <div>
+     <button (click)="toggleAddTask()">Add Task</button>
+  </div>
+  @if(showAddTask){
+     <app-add-task (output)="AddTask($event)"></app-add-task>
+  }
+</div>
+<app-footer (output)="Clear()"></app-footer>
