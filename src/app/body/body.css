@@ -138,3 +138,22 @@ button:disabled {
   color: #333;
   font-size: 0.9rem;
 }
+.add-task-toggle {
+  padding: 0.55rem 1.2rem;
+  background: #1976d2;        /* blue background */
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.add-task-toggle:hover {
+  background: #1565c0;        /* darker blue on hover */
+}
+
+.add-task-toggle:active {
+  transform: scale(0.97);     /* small click animation */
+}

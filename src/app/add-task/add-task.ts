@@ -22,6 +22,6 @@ export class AddTaskComponent {
      this.output.emit(task);
      this.enteredTaskName='';
      this.enteredTime='';
-     this.enteredTaskName='';
+     this.enteredImportance='';
    }
 }

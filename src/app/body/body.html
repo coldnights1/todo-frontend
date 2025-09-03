@@ -32,9 +32,10 @@
       <p class="progress-text">{{ done }}/{{ total }} tasks ({{ percent }}%)</p>
     </div>
   }
-  <div>
-     <button (click)="toggleAddTask()">Add Task</button>
-  </div>
+ <div>
+  <button class="add-task-toggle" (click)="toggleAddTask()">Add Task</button>
+</div>
+
   @if(showAddTask){
      <app-add-task (output)="AddTask($event)"></app-add-task>
   }

@@ -35,8 +35,12 @@ export class BodyComponent {
   toggleAddTask(){ this.showAddTask=!this.showAddTask;}
   AddTask(obj:TaskObj){
      //it will get re-rendered 
+     if(obj.enteredTaskName!='' && obj.enteredTime!='' && (obj.enteredImportance==='High' || obj.enteredImportance==='Medium' || obj.enteredImportance==='Low')){
      this.tasks.push({task_name: obj.enteredTaskName,time_to_complete: obj.enteredTime,importance :obj.enteredImportance,completed:false});
-  }
+     }else{
+         console.log("invalid");
+     }
+    }
   Clear(){
      this.tasks=[];
   }
